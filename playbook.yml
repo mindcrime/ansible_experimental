@@ -1,0 +1,12 @@
+---
+- name: Create Fogcutter demo environment
+  hosts: localhost
+  gather_facts: True
+  become: true
+  become_method: sudo
+  become_user: root
+- name: configure hosts
+  hosts: localhost
+  roles:
+    - arole
+    

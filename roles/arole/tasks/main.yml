@@ -1,0 +1,7 @@
+---
+- name: test
+  debug: msg="{{hostvars['localhost']['install_postgres_jdbc']}}"
+  when: install_postgres_jdbc is defined
+- name: do some stuff
+  debug: msg="Did stuff"
+  when: install_postgres_jdbc is undefined or (install_postgres_jdbc is defined and install_postgres_jdbc|bool == True)
